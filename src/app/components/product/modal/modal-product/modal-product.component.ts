@@ -33,9 +33,6 @@ export class ModalProductComponent implements OnInit {
 
             this.form = this.createForm(new Product());
         }
-
-
-        console.log(this.form);
     }
 
     private createForm(product: Product): FormGroup {
@@ -76,7 +73,6 @@ export class ModalProductComponent implements OnInit {
             if (response.success) {
                 console.log(response.message);
 
-
                 this.form = this.editForm(this.product = response.result);
 
             }
@@ -88,7 +84,6 @@ export class ModalProductComponent implements OnInit {
 
     // send product to api
     onSubmit(product: Product): void {
-        debugger
         this.productId ? this.editProduct(product) : this.createProduct(product);
     }
 
